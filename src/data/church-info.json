@@ -1,0 +1,38 @@
+{
+  "name": "Fortress Church",
+  "tagline": "Building Faith, Building Community",
+  "welcomeMessage": "Welcome to Fortress Church! We're a community of believers dedicated to growing in faith, serving our neighbors, and sharing God's love. Whether you're new to faith or have been walking with Christ for years, there's a place for you here.",
+  "mission": "To be a beacon of hope and faith in our community, providing a place where all can gather to worship, grow, and serve together.",
+  "values": [
+    "Faith in Christ",
+    "Community & Fellowship",
+    "Service to Others",
+    "Growth & Discipleship",
+    "Love & Acceptance"
+  ],
+  "address": {
+    "street": "123 Faith Street",
+    "city": "Your City",
+    "state": "ST",
+    "zip": "12345"
+  },
+  "contact": {
+    "phone": "(555) 123-4567",
+    "email": "info@fortresschurch.org",
+    "pastor": "Pastor John Smith"
+  },
+  "buildingProject": {
+    "name": "New Sanctuary Building",
+    "description": "We are building a new sanctuary to accommodate our growing congregation and better serve our community. This project represents our commitment to faith, fellowship, and future generations.",
+    "startDate": "2025-01-15",
+    "estimatedCompletion": "2026-06-01",
+    "currentProgress": 15,
+    "goal": 100
+  },
+  "social": {
+    "facebook": "https://facebook.com/fortresschurch",
+    "instagram": "https://instagram.com/fortresschurch",
+    "youtube": "https://youtube.com/@fortresschurch"
+  }
+}
+

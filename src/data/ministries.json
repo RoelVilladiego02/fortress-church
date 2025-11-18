@@ -1,0 +1,41 @@
+{
+  "ministries": [
+    {
+      "name": "Children's Ministry",
+      "description": "A safe and fun environment for children to learn about God's love. Ages 0-12.",
+      "meets": "Sundays during service",
+      "contact": "children@fortresschurch.org"
+    },
+    {
+      "name": "Youth Group",
+      "description": "A vibrant community for teens to grow in faith and build lasting friendships. Ages 13-18.",
+      "meets": "Sundays 6:00 PM",
+      "contact": "youth@fortresschurch.org"
+    },
+    {
+      "name": "Women's Ministry",
+      "description": "Building community and growing together through Bible study, fellowship, and service.",
+      "meets": "First Saturday of each month, 10:00 AM",
+      "contact": "women@fortresschurch.org"
+    },
+    {
+      "name": "Men's Ministry",
+      "description": "Encouraging men to grow in faith, character, and leadership.",
+      "meets": "Second Saturday of each month, 7:00 AM",
+      "contact": "men@fortresschurch.org"
+    },
+    {
+      "name": "Small Groups",
+      "description": "Connect with others in smaller groups for Bible study, prayer, and fellowship throughout the week.",
+      "meets": "Various times and locations",
+      "contact": "smallgroups@fortresschurch.org"
+    },
+    {
+      "name": "Outreach",
+      "description": "Serving our community through food drives, neighborhood events, and partnerships with local organizations.",
+      "meets": "Various times",
+      "contact": "outreach@fortresschurch.org"
+    }
+  ]
+}
+

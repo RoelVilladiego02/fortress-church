@@ -1,0 +1,41 @@
+{
+  "serviceTimes": [
+    {
+      "day": "Sunday",
+      "services": [
+        {
+          "name": "Morning Worship",
+          "time": "10:00 AM",
+          "description": "Join us for our main worship service with music, prayer, and teaching."
+        },
+        {
+          "name": "Sunday School",
+          "time": "9:00 AM",
+          "description": "Bible study classes for all ages before the main service."
+        },
+        {
+          "name": "Evening Service",
+          "time": "6:00 PM",
+          "description": "An evening of worship and fellowship."
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "services": [
+        {
+          "name": "Midweek Prayer & Bible Study",
+          "time": "7:00 PM",
+          "description": "A time of prayer, Bible study, and community."
+        }
+      ]
+    }
+  ],
+  "location": "We currently meet at our temporary location while our new sanctuary is being built.",
+  "livestream": {
+    "available": true,
+    "url": "https://youtube.com/@fortresschurch/live",
+    "description": "Can't join us in person? Watch our services live online."
+  }
+}
+

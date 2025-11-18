@@ -1,0 +1,32 @@
+{
+  "upcomingEvents": [
+    {
+      "id": 1,
+      "title": "Community Food Drive",
+      "date": "2025-02-15",
+      "time": "10:00 AM - 2:00 PM",
+      "location": "Church Parking Lot",
+      "description": "Join us as we collect food donations for local families in need. All are welcome to donate or volunteer.",
+      "type": "outreach"
+    },
+    {
+      "id": 2,
+      "title": "New Member Orientation",
+      "date": "2025-02-22",
+      "time": "12:00 PM",
+      "location": "Fellowship Hall",
+      "description": "Learn more about Fortress Church, our mission, and how to get involved. Lunch provided.",
+      "type": "fellowship"
+    },
+    {
+      "id": 3,
+      "title": "Easter Celebration",
+      "date": "2025-04-20",
+      "time": "10:00 AM",
+      "location": "Main Sanctuary",
+      "description": "Join us for a special Easter service celebrating the resurrection of Christ. Special music and message.",
+      "type": "worship"
+    }
+  ]
+}
+

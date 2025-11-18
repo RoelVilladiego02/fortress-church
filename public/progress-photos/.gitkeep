@@ -1,0 +1,24 @@
+# Progress Photos Directory
+
+Place your construction progress photos here.
+
+## Organization
+
+You can organize photos by date:
+- `2025-01/foundation-1.jpg`
+- `2025-02/framing-1.jpg`
+
+Or keep them flat:
+- `foundation-1.jpg`
+- `framing-1.jpg`
+
+## Usage
+
+Reference photos in `src/data/progress-updates.json`:
+
+```json
+{
+  "photos": ["2025-01/foundation-1.jpg", "2025-01/foundation-2.jpg"]
+}
+```
+
