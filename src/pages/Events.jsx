@@ -9,51 +9,73 @@ export default function Events() {
     worship: 'Worship',
     fellowship: 'Fellowship',
     outreach: 'Outreach',
-    other: 'Other'
+    discipleship: 'Discipleship',
+    other: 'Activation'
   };
 
+  const highlight = [
+    { title: 'Encounter', description: '48-hours of healing & deliverance' },
+    { title: 'School of Leaders', description: 'Training tracks for emerging leaders' },
+    { title: 'Cells on Mission', description: 'Community outreaches led by every twelve' }
+  ];
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-neutral-950 text-white">
       {/* Header Section */}
-      <section className="bg-wood-dark text-white py-16 border-b border-wood-brown">
+      <section className="bg-black py-16 border-b border-white/10">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 uppercase tracking-tight">Events</h1>
-          <p className="text-xl text-gray-200">Join us for upcoming events and gatherings</p>
+          <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4">Events</p>
+          <h1 className="text-4xl md:text-5xl font-black mb-6">G12 Calendar</h1>
+          <p className="text-xl text-white/70 max-w-3xl">
+            Every date on our calendar serves the ladder: win, consolidate, disciple, send.
+          </p>
+        </div>
+      </section>
+
+      {/* Highlights */}
+      <section className="py-16 border-b border-white/10 bg-black">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {highlight.map((item) => (
+              <div key={item.title} className="border border-white/10 rounded-2xl p-6 bg-white/5">
+                <p className="text-xs uppercase tracking-[0.4em] text-white/50 mb-2">{item.title}</p>
+                <p className="text-white/75">{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Events List */}
-      <section className="py-16 bg-wood-charcoal">
+      <section className="py-16 border-b border-white/10">
         <div className="container mx-auto px-4">
           {upcomingEvents.length > 0 ? (
             <div className="max-w-4xl mx-auto space-y-6">
               {upcomingEvents.map((event) => (
-                <div key={event.id} className="bg-wood-dark border border-wood-brown rounded-lg p-6 hover:border-wood-light transition-all">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="bg-white text-wood-dark px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">
-                          {eventTypes[event.type] || 'Event'}
-                        </span>
-                        <span className="text-gray-400 text-sm">
-                          {new Date(event.date).toLocaleDateString('en-US', {
-                            weekday: 'long',
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          })}
-                        </span>
-                      </div>
-                      <h3 className="text-2xl font-semibold text-white mb-2">{event.title}</h3>
-                      <p className="text-gray-300 mb-4 leading-relaxed">{event.description}</p>
-                      <div className="flex flex-wrap gap-4 text-sm text-gray-400">
-                        <span>
-                          <span className="font-semibold text-gray-300">Time:</span> {event.time}
-                        </span>
-                        <span>
-                          <span className="font-semibold text-gray-300">Location:</span> {event.location}
-                        </span>
-                      </div>
+                <div key={event.id} className="border border-white/10 rounded-2xl p-6 bg-black">
+                  <div className="flex flex-col gap-4">
+                    <div className="flex flex-wrap items-center gap-3">
+                      <span className="px-3 py-1 border border-white/30 rounded-full text-xs uppercase tracking-[0.4em] text-white/70">
+                        {eventTypes[event.type] || eventTypes.other}
+                      </span>
+                      <span className="text-white/60 text-sm">
+                        {new Date(event.date).toLocaleDateString('en-US', {
+                          weekday: 'long',
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-semibold">{event.title}</h3>
+                    <p className="text-white/70 leading-relaxed">{event.description}</p>
+                    <div className="flex flex-wrap gap-6 text-sm text-white/60">
+                      <span>
+                        <span className="font-semibold text-white/80">Time:</span> {event.time}
+                      </span>
+                      <span>
+                        <span className="font-semibold text-white/80">Location:</span> {event.location}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -61,9 +83,9 @@ export default function Events() {
             </div>
           ) : (
             <div className="max-w-3xl mx-auto text-center">
-              <div className="bg-wood-dark border border-wood-brown rounded-lg p-12">
-                <p className="text-xl text-gray-300 mb-4">No upcoming events scheduled</p>
-                <p className="text-gray-400">Check back soon for upcoming events and gatherings!</p>
+              <div className="border border-white/10 rounded-2xl p-12 bg-black">
+                <p className="text-xl text-white/80 mb-4">No upcoming events scheduled</p>
+                <p className="text-white/60">Check back soon or follow us on social for the latest updates.</p>
               </div>
             </div>
           )}
@@ -71,26 +93,26 @@ export default function Events() {
       </section>
 
       {/* Stay Connected */}
-      <section className="py-16 bg-wood-dark border-t border-wood-brown">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white mb-6 uppercase tracking-tight">Stay Connected</h2>
-            <div className="bg-wood-charcoal border border-wood-brown rounded-lg p-8">
-              <p className="text-lg text-gray-200 mb-6 leading-relaxed">
-                Want to stay updated on all our events? Follow us on social media or contact us to be added to our newsletter.
+            <h2 className="text-3xl font-bold mb-6">Stay Connected</h2>
+            <div className="border border-white/10 rounded-2xl p-8 bg-black">
+              <p className="text-lg text-white/80 mb-6 leading-relaxed">
+                Get event reminders, Encounter registrations, and School of Leaders updates directly in your inbox.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a
-                  href="https://facebook.com/fortresschurch"
+                  href="https://www.facebook.com/profile.php?id=61576246697187"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-white text-wood-dark px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors uppercase tracking-wide"
+                  className="px-8 py-3 rounded-full border border-white/40 text-white text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-black transition-colors"
                 >
                   Facebook
                 </a>
                 <a
                   href="mailto:info@fortresschurch.org"
-                  className="bg-transparent border-2 border-white text-white px-6 py-2 rounded-lg font-semibold hover:bg-white hover:text-wood-dark transition-colors uppercase tracking-wide"
+                  className="px-8 py-3 rounded-full border border-white/40 text-white text-xs tracking-[0.3em] uppercase hover:bg-white hover:text-black transition-colors"
                 >
                   Contact Us
                 </a>

@@ -4,22 +4,13 @@
 
 @layer base {
   body {
-    @apply bg-wood-dark text-white;
-    background-image: 
-      repeating-linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.1) 0px,
-        transparent 1px,
-        transparent 2px,
-        rgba(0, 0, 0, 0.1) 3px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        rgba(0, 0, 0, 0.1) 0px,
-        transparent 1px,
-        transparent 2px,
-        rgba(0, 0, 0, 0.1) 3px
-      );
-    background-size: 100% 4px, 4px 100%;
+    @apply bg-neutral-950 text-neutral-50 antialiased;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.08) 1px, transparent 0),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
+      linear-gradient(225deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%);
+    background-size: 6px 6px, 40px 40px, 40px 40px;
+    background-blend-mode: screen;
+    min-height: 100vh;
   }
 }

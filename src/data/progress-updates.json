@@ -2,30 +2,30 @@
   "updates": [
     {
       "id": 1,
-      "date": "2025-01-15",
-      "title": "Groundbreaking Ceremony",
-      "description": "We officially broke ground on our new church building! The entire congregation gathered to celebrate this historic moment. The site has been cleared and prepared for construction.",
+      "date": "2025-11-10",
+      "title": "Lease Signed & Building Phase Launched",
+      "description": "We officially secured the Sta. Rosa Town Center space and prayed over the new location. Teams immediately began prepping the site and scheduling volunteer crews.",
       "photos": [],
       "milestone": true,
-      "progress_percentage": 5
-    },
-    {
-      "id": 2,
-      "date": "2025-01-20",
-      "title": "Foundation Work Begins",
-      "description": "Excavation and foundation work has commenced. The team is working diligently to ensure a solid foundation for our new home.",
-      "photos": [],
-      "milestone": false,
       "progress_percentage": 10
     },
     {
-      "id": 3,
-      "date": "2025-02-01",
-      "title": "Foundation Complete",
-      "description": "The concrete foundation has been fully poured and cured. All inspections passed successfully. We're ready to move to the next phase!",
+      "id": 2,
+      "date": "2025-11-17",
+      "title": "Volunteer Demolition Weekend",
+      "description": "PID coaches, cell leaders, and volunteers filled sacks with rubble, removed old walls, and cleared the mezzanine so contractors can move quickly.",
       "photos": [],
       "milestone": true,
-      "progress_percentage": 15
+      "progress_percentage": 20
+    },
+    {
+      "id": 3,
+      "date": "2025-11-19",
+      "title": "Steel Framing Materials Delivered",
+      "description": "Metal studs and structural frames arrived on site. Fabrication for the stage, lobby counters, and tech booth begins this week.",
+      "photos": [],
+      "milestone": false,
+      "progress_percentage": 25
     }
   ]
 }

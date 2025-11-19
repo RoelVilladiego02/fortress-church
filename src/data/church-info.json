@@ -1,38 +1,71 @@
 {
   "name": "Fortress Church",
-  "tagline": "Building Faith, Building Community",
-  "welcomeMessage": "Welcome to Fortress Church! We're a community of believers dedicated to growing in faith, serving our neighbors, and sharing God's love. Whether you're new to faith or have been walking with Christ for years, there's a place for you here.",
-  "mission": "To be a beacon of hope and faith in our community, providing a place where all can gather to worship, grow, and serve together.",
+  "tagline": "One Vision • Twelve Leaders • Generations Reached",
+  "welcomeMessage": "Fortress Church is a G12 house committed to winning souls, consolidating families, discipling leaders, and sending every believer to impact the nations. No matter where you are on your journey, there is a place for you in the Government of Twelve.",
+  "mission": "To raise multiplying disciples through the G12 Vision—encountering Jesus, consolidating new believers, discipling with intention, and sending out teams that transform cities.",
   "values": [
-    "Faith in Christ",
-    "Community & Fellowship",
-    "Service to Others",
-    "Growth & Discipleship",
-    "Love & Acceptance"
+    "Encounter Jesus personally",
+    "Consolidate with authentic care",
+    "Disciple intentionally",
+    "Send leaders to the nations",
+    "Honor family and holiness"
   ],
   "address": {
-    "street": "123 Faith Street",
-    "city": "Your City",
-    "state": "ST",
-    "zip": "12345"
+    "street": "Casa Nieva Events Place",
+    "city": "Biñan",
+    "state": "Laguna",
+    "zip": "4024",
+    "country": "Philippines"
   },
   "contact": {
-    "phone": "(555) 123-4567",
-    "email": "info@fortresschurch.org",
-    "pastor": "Pastor John Smith"
+    "phone": "0935-981-0151",
+    "email": "fortresschurchph@gmail.com",
+    "pastor": "Pastor Nasser Barcelona"
+  },
+  "g12Vision": {
+    "theme": "Win • Consolidate • Disciple • Send",
+    "description": "We embrace the Government of Twelve as our blueprint for the Great Commission. Every believer is pastored through a cell, equipped through the School of Leaders, and released to lead their own twelve.",
+    "pillars": [
+      {
+        "title": "Encounter Retreats",
+        "summary": "Two-day weekends where people experience the cross, deliverance, and the Holy Spirit."
+      },
+      {
+        "title": "Consolidation Journey",
+        "summary": "Forty-day follow up with devotionals, coaching calls, and mentorship to strengthen new believers."
+      },
+      {
+        "title": "School of Leaders",
+        "summary": "A three-level training track that shapes character, doctrine, and leadership skills for cell leaders."
+      },
+      {
+        "title": "Government of Twelve",
+        "summary": "Each leader disciples twelve, who disciple twelve, multiplying care and mission across generations."
+      }
+    ],
+    "metrics": {
+      "activeCells": 10,
+      "leadersInTraining": 15
+    },
+    "scripture": "Matthew 28:19-20"
   },
   "buildingProject": {
     "name": "New Sanctuary Building",
     "description": "We are building a new sanctuary to accommodate our growing congregation and better serve our community. This project represents our commitment to faith, fellowship, and future generations.",
-    "startDate": "2025-01-15",
-    "estimatedCompletion": "2026-06-01",
-    "currentProgress": 15,
+    "startDate": "2025-11-10",
+    "estimatedCompletion": "2025-12-10",
+    "currentProgress": 25,
     "goal": 100
   },
   "social": {
-    "facebook": "https://facebook.com/fortresschurch",
-    "instagram": "https://instagram.com/fortresschurch",
-    "youtube": "https://youtube.com/@fortresschurch"
+    "facebook": "https://www.facebook.com/profile.php?id=61576246697187",
+    "instagram": "https://www.instagram.com/fortress.church?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+  },
+  "futureAddress": {
+    "street": "Sta. Rosa Town Center - SRTC National Road, Brgy. Macabling",
+    "city": "Santa Rosa",
+    "state": "Laguna",
+    "country": "Philippines"
   }
 }
 

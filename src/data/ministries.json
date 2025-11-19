@@ -1,40 +1,64 @@
 {
+  "g12Streams": [
+    {
+      "title": "Government of Twelve Teams",
+      "focus": "Lead a table of twelve, disciple weekly, and multiply cells every six months.",
+      "rhythm": "Weekly coaching + monthly leadership lab",
+      "nextStep": "Ask your leader about joining a G12 table."
+    },
+    {
+      "title": "Cell Groups",
+      "focus": "Weekly home and marketplace gatherings for worship, Word, and activation with every disciple involved.",
+      "rhythm": "Cells meet once a week with monthly celebration together",
+      "nextStep": "Join a local cell or start one with your leader."
+    },
+    {
+      "title": "PID (Personal Intentional Discipleship)",
+      "focus": "One-on-one mentoring that reinforces identity, healing, and spiritual disciplines after the Encounter and consolidation journey.",
+      "rhythm": "Weekly coffee conversations and daily check-ins for 6–8 weeks",
+      "nextStep": "Request a PID mentor through your cell leader."
+    },
+    {
+      "title": "SUNYL (Starting Up Your New Life)",
+      "focus": "Foundational sessions that ground new believers in Scripture, prayer, and the Holy Spirit immediately after receiving Jesus.",
+      "rhythm": "Four lessons delivered right after salvation and before the Encounter weekend",
+      "nextStep": "Complete SUNYL with your coach to prepare for the Encounter."
+    },
+    {
+      "title": "Encounter Retreat Movement",
+      "focus": "Facilitate encounters with Jesus through pre-encounter classes, the weekend retreat, and post-encounter consolidation.",
+      "rhythm": "Quarterly retreats with four-week preparation",
+      "nextStep": "Register for the next Encounter weekend."
+    },
+    {
+      "title": "School of Leaders",
+      "focus": "Three levels of training that shape doctrine, leadership, and multiplication.",
+      "rhythm": "Nine-week tracks that start every January, May, and September",
+      "nextStep": "Complete consolidation and sign up for Level 1."
+    },
+    {
+      "title": "Consolidation & Follow-Up",
+      "focus": "Forty-day devotionals, daily encouragement, and one-on-one mentoring for every new believer.",
+      "rhythm": "Daily check-ins + weekly coffee conversations",
+      "nextStep": "Serve as a consolidation coach."
+    }
+  ],
   "ministries": [
     {
-      "name": "Children's Ministry",
-      "description": "A safe and fun environment for children to learn about God's love. Ages 0-12.",
-      "meets": "Sundays during service",
-      "contact": "children@fortresschurch.org"
+      "name": "Usher Team",
+      "description": "Creates a welcoming, secure, Spirit-ready atmosphere for every gathering—parking to altar."
     },
     {
-      "name": "Youth Group",
-      "description": "A vibrant community for teens to grow in faith and build lasting friendships. Ages 13-18.",
-      "meets": "Sundays 6:00 PM",
-      "contact": "youth@fortresschurch.org"
+      "name": "Music Ministry",
+      "description": "Leads the house in prophetic praise and worship, covering all G12 encounters and celebrations."
     },
     {
-      "name": "Women's Ministry",
-      "description": "Building community and growing together through Bible study, fellowship, and service.",
-      "meets": "First Saturday of each month, 10:00 AM",
-      "contact": "women@fortresschurch.org"
+      "name": "Technical Team",
+      "description": "Oversees audio, lighting, broadcast, and stage management so the message is crystal clear online and on campus."
     },
     {
-      "name": "Men's Ministry",
-      "description": "Encouraging men to grow in faith, character, and leadership.",
-      "meets": "Second Saturday of each month, 7:00 AM",
-      "contact": "men@fortresschurch.org"
-    },
-    {
-      "name": "Small Groups",
-      "description": "Connect with others in smaller groups for Bible study, prayer, and fellowship throughout the week.",
-      "meets": "Various times and locations",
-      "contact": "smallgroups@fortresschurch.org"
-    },
-    {
-      "name": "Outreach",
-      "description": "Serving our community through food drives, neighborhood events, and partnerships with local organizations.",
-      "meets": "Various times",
-      "contact": "outreach@fortresschurch.org"
+      "name": "Media Team",
+      "description": "Captures testimonies, manages social media, and designs visuals that amplify the G12 story throughout the week."
     }
   ]
 }

@@ -2,30 +2,30 @@
   "upcomingEvents": [
     {
       "id": 1,
-      "title": "Community Food Drive",
-      "date": "2025-02-15",
-      "time": "10:00 AM - 2:00 PM",
-      "location": "Church Parking Lot",
-      "description": "Join us as we collect food donations for local families in need. All are welcome to donate or volunteer.",
-      "type": "outreach"
+      "title": "G12 Encounter Weekend",
+      "date": "2025-03-07",
+      "time": "Friday 6:00 PM – Sunday 1:00 PM",
+      "location": "Retreat Center",
+      "description": "Forty-eight hours of worship, deliverance, and restoration designed to lead every participant into a fresh encounter with Jesus.",
+      "type": "worship"
     },
     {
       "id": 2,
-      "title": "New Member Orientation",
-      "date": "2025-02-22",
-      "time": "12:00 PM",
-      "location": "Fellowship Hall",
-      "description": "Learn more about Fortress Church, our mission, and how to get involved. Lunch provided.",
-      "type": "fellowship"
+      "title": "School of Leaders Intensive",
+      "date": "2025-03-18",
+      "time": "6:30 PM",
+      "location": "Main Auditorium",
+      "description": "A one-night intensive that jump-starts the next School of Leaders track with vision casting, teaching, and enrollment.",
+      "type": "discipleship"
     },
     {
       "id": 3,
-      "title": "Easter Celebration",
-      "date": "2025-04-20",
-      "time": "10:00 AM",
-      "location": "Main Sanctuary",
-      "description": "Join us for a special Easter service celebrating the resurrection of Christ. Special music and message.",
-      "type": "worship"
+      "title": "Community Food Drive",
+      "date": "2025-04-05",
+      "time": "10:00 AM - 2:00 PM",
+      "location": "City Market Lot",
+      "description": "Cells adopt blocks to deliver groceries, pray for families, and invite neighbors into the G12 process.",
+      "type": "outreach"
     }
   ]
 }

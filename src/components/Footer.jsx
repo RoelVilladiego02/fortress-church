@@ -2,43 +2,55 @@ import churchInfo from '../data/church-info.json';
 
 export default function Footer() {
   return (
-    <footer className="bg-wood-charcoal border-t border-wood-brown text-white mt-auto">
+    <footer className="bg-black border-t border-white/10 text-white mt-auto">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Church Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4 uppercase tracking-tight">FORTRESS CHURCH</h3>
-            <p className="text-gray-300 mb-2">{churchInfo.tagline}</p>
-            <p className="text-gray-400 text-sm">
-              {churchInfo.address.street}<br />
+            <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-3">Fortress Church</p>
+            <p className="text-2xl font-black mb-4">{churchInfo.tagline}</p>
+            <p className="text-white/70 text-sm leading-relaxed">
+              {churchInfo.address.street}
+              <br />
               {churchInfo.address.city}, {churchInfo.address.state} {churchInfo.address.zip}
             </p>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-xl font-bold mb-4 uppercase tracking-tight">Contact Us</h3>
-            <p className="text-gray-300 mb-2">
-              <span className="font-semibold">Phone:</span> {churchInfo.contact.phone}
-            </p>
-            <p className="text-gray-300 mb-2">
-              <span className="font-semibold">Email:</span> {churchInfo.contact.email}
-            </p>
-            <p className="text-gray-300">
-              <span className="font-semibold">Pastor:</span> {churchInfo.contact.pastor}
+            <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-3">Contact</p>
+            <div className="space-y-1 text-white/80 text-sm">
+              <p>
+                <span className="text-white font-semibold">Phone:</span> {churchInfo.contact.phone}
+              </p>
+              <p>
+                <span className="text-white font-semibold">Email:</span> {churchInfo.contact.email}
+              </p>
+              <p>
+                <span className="text-white font-semibold">Pastor:</span> {churchInfo.contact.pastor}
+              </p>
+            </div>
+          </div>
+
+          {/* G12 Vision */}
+          <div>
+            <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-3">G12 Vision</p>
+            <p className="font-semibold text-white mb-2">{churchInfo.g12Vision.theme}</p>
+            <p className="text-white/60 text-sm leading-relaxed">
+              {churchInfo.g12Vision.description}
             </p>
           </div>
 
           {/* Social Media */}
           <div>
-            <h3 className="text-xl font-bold mb-4 uppercase tracking-tight">Follow Us</h3>
+            <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-3">Follow</p>
             <div className="flex space-x-4">
               {churchInfo.social.facebook && (
                 <a
                   href={churchInfo.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-white/60 hover:text-white transition-colors"
                   aria-label="Facebook"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -51,7 +63,7 @@ export default function Footer() {
                   href={churchInfo.social.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-white/60 hover:text-white transition-colors"
                   aria-label="Instagram"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -59,24 +71,24 @@ export default function Footer() {
                   </svg>
                 </a>
               )}
-              {churchInfo.social.youtube && (
+              {/* {churchInfo.social.youtube && (
                 <a
                   href={churchInfo.social.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-white transition-colors"
+                  className="text-white/60 hover:text-white transition-colors"
                   aria-label="YouTube"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                   </svg>
                 </a>
-              )}
+              )} */}
             </div>
           </div>
         </div>
 
-        <div className="border-t border-wood-brown mt-8 pt-8 text-center text-gray-400 text-sm">
+        <div className="border-t border-white/5 mt-12 pt-8 text-center text-white/40 text-sm">
           <p>&copy; {new Date().getFullYear()} Fortress Church. All rights reserved.</p>
         </div>
       </div>

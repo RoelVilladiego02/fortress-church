@@ -1,35 +1,44 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import logoMark from '../assets/logo/fortress.png';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const linkClasses =
+    'text-white/90 hover:text-white transition-colors font-semibold tracking-wide text-sm uppercase';
+
   return (
-    <header className="bg-wood-charcoal border-b border-wood-brown sticky top-0 z-50 backdrop-blur-sm bg-opacity-95">
+    <header className="sticky top-0 z-50 bg-black/80 border-b border-white/10 backdrop-blur-lg">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold text-white tracking-tight uppercase">
-            FORTRESS CHURCH
+          <Link to="/" className="text-white">
+            <div className="flex items-center gap-3">
+              <img src={logoMark} alt="Fortress Church logo" className="h-10 w-auto" />
+              <div className="flex flex-col leading-tight">
+                <span className="text-xs font-semibold tracking-[0.6em] uppercase text-white/70">Fortress Church</span>
+              </div>
+            </div>
           </Link>
-          
+
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            <Link to="/" className="text-white hover:text-gray-300 transition-colors font-medium">
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className={linkClasses}>
               Home
             </Link>
-            <Link to="/services" className="text-white hover:text-gray-300 transition-colors font-medium">
+            <Link to="/services" className={linkClasses}>
               Services
             </Link>
-            <Link to="/ministries" className="text-white hover:text-gray-300 transition-colors font-medium">
+            <Link to="/ministries" className={linkClasses}>
               Ministries
             </Link>
-            <Link to="/events" className="text-white hover:text-gray-300 transition-colors font-medium">
+            <Link to="/events" className={linkClasses}>
               Events
             </Link>
-            <Link to="/progress" className="text-white hover:text-gray-300 transition-colors font-medium">
-              Building Progress
+            <Link to="/progress" className={linkClasses}>
+              Progress
             </Link>
-            <Link to="/about" className="text-white hover:text-gray-300 transition-colors font-medium">
+            <Link to="/about" className={linkClasses}>
               About
             </Link>
           </div>
@@ -53,48 +62,23 @@ export default function Header() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 space-y-2 pb-4">
-            <Link
-              to="/"
-              className="block py-2 text-white hover:text-gray-300 transition-colors font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              to="/services"
-              className="block py-2 text-white hover:text-gray-300 transition-colors font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Services
-            </Link>
-            <Link
-              to="/ministries"
-              className="block py-2 text-white hover:text-gray-300 transition-colors font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Ministries
-            </Link>
-            <Link
-              to="/events"
-              className="block py-2 text-white hover:text-gray-300 transition-colors font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Events
-            </Link>
-            <Link
-              to="/progress"
-              className="block py-2 text-white hover:text-gray-300 transition-colors font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Building Progress
-            </Link>
-            <Link
-              to="/about"
-              className="block py-2 text-white hover:text-gray-300 transition-colors font-medium"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
-            </Link>
+            {[
+              { path: '/', label: 'Home' },
+              { path: '/services', label: 'Services' },
+              { path: '/ministries', label: 'Ministries' },
+              { path: '/events', label: 'Events' },
+              { path: '/progress', label: 'Progress' },
+              { path: '/about', label: 'About' }
+            ].map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className="block py-2 text-white/80 hover:text-white transition-colors font-semibold tracking-wide uppercase text-sm"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         )}
       </nav>

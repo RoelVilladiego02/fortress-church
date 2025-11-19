@@ -7,35 +7,35 @@ export default function ProgressCard({ update }) {
   });
 
   return (
-    <div className="bg-wood-charcoal border border-wood-brown rounded-lg overflow-hidden hover:border-wood-light transition-all">
+    <div className="border border-white/10 rounded-2xl overflow-hidden bg-black hover:border-white/30 transition">
       <div className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div>
             <h3 className="text-xl font-bold text-white mb-2">
               {update.title}
             </h3>
-            <p className="text-gray-400 text-sm">{formattedDate}</p>
+            <p className="text-white/50 text-sm">{formattedDate}</p>
           </div>
           {update.milestone && (
-            <span className="bg-white text-wood-dark px-3 py-1 rounded-full text-sm font-semibold uppercase tracking-wide">
+            <span className="px-3 py-1 rounded-full border border-white/40 text-xs uppercase tracking-[0.3em]">
               Milestone
             </span>
           )}
         </div>
-        
-        <p className="text-gray-200 mb-4 leading-relaxed">
+
+        <p className="text-white/75 mb-4 leading-relaxed">
           {update.description}
         </p>
 
         {update.progress_percentage && (
           <div className="mt-4">
             <div className="flex justify-between items-center mb-1">
-              <span className="text-sm text-gray-300">Progress</span>
+              <span className="text-sm text-white/60">Progress</span>
               <span className="text-sm font-semibold text-white">
                 {update.progress_percentage}%
               </span>
             </div>
-            <div className="w-full bg-wood-dark rounded-full h-2 border border-wood-brown">
+            <div className="w-full bg-white/10 rounded-full h-2">
               <div
                 className="bg-white h-2 rounded-full transition-all duration-300"
                 style={{ width: `${update.progress_percentage}%` }}
@@ -49,7 +49,7 @@ export default function ProgressCard({ update }) {
             {update.photos.map((photo, index) => (
               <div
                 key={index}
-                className="aspect-video bg-gray-200 rounded overflow-hidden"
+                className="aspect-video bg-white/5 rounded overflow-hidden"
               >
                 <img
                   src={`/progress-photos/${photo}`}

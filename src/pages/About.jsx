@@ -2,45 +2,79 @@ import churchInfo from '../data/church-info.json';
 import teamInfo from '../data/team.json';
 
 export default function About() {
+  const { g12Vision, futureAddress } = churchInfo;
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-neutral-950 text-white">
       {/* Header Section */}
-      <section className="bg-wood-dark text-white py-16 border-b border-wood-brown">
+      <section className="bg-black py-16 border-b border-white/10">
         <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 uppercase tracking-tight">About Fortress Church</h1>
-          <p className="text-xl text-gray-200">{churchInfo.tagline}</p>
+          <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4">About</p>
+          <h1 className="text-4xl md:text-5xl font-black mb-6">Fortress Church</h1>
+          <p className="text-xl text-white/70 max-w-3xl">{churchInfo.tagline}</p>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-16 bg-wood-charcoal border-b border-wood-brown">
+      {/* Mission + G12 */}
+      <section className="py-16 border-b border-white/10 bg-black">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-white mb-6 uppercase tracking-tight">Our Mission</h2>
-            <p className="text-lg text-gray-200 leading-relaxed mb-8">
-              {churchInfo.mission}
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="border border-white/10 rounded-2xl p-6 bg-white/5">
+              <p className="text-xs uppercase tracking-[0.4em] text-white/50 mb-3">Mission</p>
+              <h2 className="text-3xl font-bold mb-4">Why We Exist</h2>
+              <p className="text-white/80 leading-relaxed">{churchInfo.mission}</p>
+            </div>
+            <div className="border border-white/10 rounded-2xl p-6 bg-white/5">
+              <p className="text-xs uppercase tracking-[0.4em] text-white/50 mb-3">G12 Vision</p>
+              <h2 className="text-3xl font-bold mb-4">{g12Vision.theme}</h2>
+              <p className="text-white/80 leading-relaxed">{g12Vision.description}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* G12 Pillars */}
+      <section className="py-16 border-b border-white/10">
+        <div className="container mx-auto px-4">
+          <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4 text-center">Blueprint</p>
+          <h2 className="text-3xl font-bold text-center mb-10">G12 Pillars</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {g12Vision.pillars.map((pillar) => (
+              <div key={pillar.title} className="border border-white/10 rounded-2xl p-6 bg-black">
+                <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-2">{pillar.title}</p>
+                <p className="text-white/75">{pillar.summary}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Building Project Section */}
-      <section className="py-16 bg-wood-dark">
+      <section className="py-16 border-b border-white/10 bg-black">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-white mb-6 uppercase tracking-tight">Our Building Project</h2>
-            <div className="bg-wood-charcoal border border-wood-brown rounded-lg p-8">
-              <h3 className="text-2xl font-semibold text-white mb-4">
-                {churchInfo.buildingProject.name}
-              </h3>
-              <p className="text-gray-200 leading-relaxed mb-6">
+            <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4">Future Home</p>
+            <h2 className="text-3xl font-bold mb-6">{churchInfo.buildingProject.name}</h2>
+            <div className="border border-white/10 rounded-2xl p-8 bg-white/5">
+              <p className="text-white/80 leading-relaxed mb-6">
                 {churchInfo.buildingProject.description}
               </p>
-              
+
+              {futureAddress && (
+                <div className="mb-8 border border-white/10 rounded-2xl p-6 bg-black">
+                  <p className="text-xs uppercase tracking-[0.4em] text-white/50 mb-2">Future Address</p>
+                  <p className="text-white/80 font-semibold">
+                    {futureAddress.street}
+                    <br />
+                    {futureAddress.city}, {futureAddress.state}, {futureAddress.country}
+                  </p>
+                </div>
+              )}
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 <div>
                   <h4 className="font-semibold text-white mb-2">Project Start</h4>
-                  <p className="text-gray-300">
+                  <p className="text-white/70">
                     {new Date(churchInfo.buildingProject.startDate).toLocaleDateString('en-US', {
                       year: 'numeric',
                       month: 'long',
@@ -50,7 +84,7 @@ export default function About() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-white mb-2">Estimated Completion</h4>
-                  <p className="text-gray-300">
+                  <p className="text-white/70">
                     {new Date(churchInfo.buildingProject.estimatedCompletion).toLocaleDateString('en-US', {
                       year: 'numeric',
                       month: 'long',
@@ -60,11 +94,11 @@ export default function About() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-white mb-2">Current Progress</h4>
-                  <p className="text-gray-300">{churchInfo.buildingProject.currentProgress}%</p>
+                  <p className="text-white/70">{churchInfo.buildingProject.currentProgress}%</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-white mb-2">Goal</h4>
-                  <p className="text-gray-300">{churchInfo.buildingProject.goal}%</p>
+                  <p className="text-white/70">{churchInfo.buildingProject.goal}%</p>
                 </div>
               </div>
             </div>
@@ -73,16 +107,17 @@ export default function About() {
       </section>
 
       {/* Leadership Section */}
-      <section className="py-16 bg-wood-charcoal border-y border-wood-brown">
+      <section className="py-16 border-b border-white/10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-white mb-8 text-center uppercase tracking-tight">Our Leadership</h2>
+            <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4 text-center">Leadership</p>
+            <h2 className="text-3xl font-bold text-center mb-10">Our Pastoral Team</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {teamInfo.leadership.map((member, index) => (
-                <div key={index} className="bg-wood-dark border border-wood-brown rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
-                  <p className="text-gray-300 font-medium mb-3">{member.role}</p>
-                  <p className="text-gray-200">{member.bio}</p>
+                <div key={index} className="border border-white/10 rounded-2xl p-6 bg-black">
+                  <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
+                  <p className="text-white/60 font-medium mb-3">{member.role}</p>
+                  <p className="text-white/75">{member.bio}</p>
                 </div>
               ))}
             </div>
@@ -91,29 +126,29 @@ export default function About() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-wood-dark">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white mb-6 uppercase tracking-tight">Get In Touch</h2>
-            <div className="bg-wood-charcoal border border-wood-brown rounded-lg p-8">
-              <div className="space-y-4">
+            <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
+            <div className="border border-white/10 rounded-2xl p-8 bg-black">
+              <div className="space-y-4 text-white/80">
                 <div>
                   <h3 className="font-semibold text-white mb-2">Address</h3>
-                  <p className="text-gray-300">
+                  <p>
                     {churchInfo.address.street}<br />
                     {churchInfo.address.city}, {churchInfo.address.state} {churchInfo.address.zip}
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white mb-2">Contact Information</h3>
-                  <p className="text-gray-300">
+                  <h3 className="font-semibold text-white mb-2">Contact</h3>
+                  <p>
                     <strong>Phone:</strong> {churchInfo.contact.phone}<br />
                     <strong>Email:</strong> {churchInfo.contact.email}
                   </p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-white mb-2">Pastor</h3>
-                  <p className="text-gray-300">{churchInfo.contact.pastor}</p>
+                  <p>{churchInfo.contact.pastor}</p>
                 </div>
               </div>
             </div>
