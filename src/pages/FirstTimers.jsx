@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import churchInfo from '../data/church-info.json';
 import servicesData from '../data/services.json';
+import familyPhoto from '../assets/family.jpg';
 
 export default function FirstTimers() {
   const service = servicesData.serviceTimes?.[0]?.services?.[0];
@@ -28,11 +29,22 @@ export default function FirstTimers() {
       {/* Hero */}
       <section className="bg-black py-16 border-b border-white/10">
         <div className="container mx-auto px-4">
-          <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4">First Timers</p>
-          <h1 className="text-4xl md:text-5xl font-black mb-6">Welcome Home, First Timer.</h1>
-          <p className="text-xl text-white/70 max-w-3xl">
-            We prepared this page just for you. Discover what to expect, how to plan your visit, and what happens after you say yes to Jesus.
-          </p>
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4">First Timers</p>
+              <h1 className="text-4xl md:text-5xl font-black mb-6">Welcome Home, First Timer.</h1>
+              <p className="text-xl text-white/70">
+                We prepared this page just for you. Discover what to expect, how to plan your visit, and what happens after you say yes to Jesus.
+              </p>
+            </div>
+            <div className="rounded-3xl overflow-hidden border border-white/5 shadow-2xl">
+              <img
+                src={familyPhoto}
+                alt="Fortress Church family celebrating together"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

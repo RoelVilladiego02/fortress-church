@@ -6,6 +6,7 @@ import servicesData from '../data/services.json';
 import ministriesData from '../data/ministries.json';
 import eventsData from '../data/events.json';
 import { Link } from 'react-router-dom';
+import servicePhoto from '../assets/service.png';
 
 export default function Home() {
   // Get latest 2 updates
@@ -57,6 +58,13 @@ export default function Home() {
               </div>
             </div>
             <div className="grid gap-4">
+              <div className="rounded-3xl overflow-hidden border border-neutral-200">
+                <img
+                  src={servicePhoto}
+                  alt="Service Photo"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="border border-neutral-200 rounded-3xl p-6">
                 <p className="text-xs uppercase tracking-[0.5em] text-neutral-500 mb-2">Sunday Service</p>
                 <p className="text-3xl font-black">{primaryService?.time || '3:00 PM – 7:00 PM'}</p>
