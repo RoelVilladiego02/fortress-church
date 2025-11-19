@@ -41,6 +41,9 @@ export default function Header() {
             <Link to="/about" className={linkClasses}>
               About
             </Link>
+            <Link to="/first-timers" className={`${linkClasses} text-white`}>
+              First Timers
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -68,7 +71,8 @@ export default function Header() {
               { path: '/ministries', label: 'Ministries' },
               { path: '/events', label: 'Events' },
               { path: '/progress', label: 'Progress' },
-              { path: '/about', label: 'About' }
+              { path: '/about', label: 'About' },
+              { path: '/first-timers', label: 'First Timers' }
             ].map((item) => (
               <Link
                 key={item.path}

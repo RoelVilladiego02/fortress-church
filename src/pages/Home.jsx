@@ -41,6 +41,20 @@ export default function Home() {
                 Whether you are fresh out of an Encounter or stepping into your first cell, Fortress Church is a safe place to heal, belong,
                 and be sent. Pull up a chair—there&apos;s room for you at the table.
               </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  to="/first-timers"
+                  className="px-6 py-3 bg-black text-white rounded-full text-xs font-semibold tracking-[0.3em] uppercase"
+                >
+                  I&apos;m New
+                </Link>
+                <Link
+                  to="/about"
+                  className="px-6 py-3 border border-neutral-300 text-neutral-700 rounded-full text-xs font-semibold tracking-[0.3em] uppercase"
+                >
+                  Learn More
+                </Link>
+              </div>
             </div>
             <div className="grid gap-4">
               <div className="border border-neutral-200 rounded-3xl p-6">
