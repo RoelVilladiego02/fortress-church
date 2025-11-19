@@ -24,10 +24,52 @@ export default function Home() {
 
   const g12Pillars = churchInfo.g12Vision.pillars;
   const g12Values = churchInfo.values;
+  const primaryService = servicesData.serviceTimes?.[0]?.services?.[0];
 
   return (
     <div className="bg-neutral-950 text-white">
       <Hero />
+
+      {/* Welcome Home Section */}
+      <section className="py-20 bg-white text-neutral-900 border-b border-neutral-200">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-xs uppercase tracking-[0.6em] text-neutral-500 mb-4">Welcome Home</p>
+              <h2 className="text-4xl md:text-5xl font-black leading-tight mb-6">This is Home—for families, leaders, and generations.</h2>
+              <p className="text-lg text-neutral-600 leading-relaxed">
+                Whether you are fresh out of an Encounter or stepping into your first cell, Fortress Church is a safe place to heal, belong,
+                and be sent. Pull up a chair—there&apos;s room for you at the table.
+              </p>
+            </div>
+            <div className="grid gap-4">
+              <div className="border border-neutral-200 rounded-3xl p-6">
+                <p className="text-xs uppercase tracking-[0.5em] text-neutral-500 mb-2">Sunday Service</p>
+                <p className="text-3xl font-black">{primaryService?.time || '3:00 PM – 7:00 PM'}</p>
+                <p className="text-neutral-500 mt-1">{primaryService?.name || 'Celebration Service'}</p>
+              </div>
+              <div className="border border-neutral-200 rounded-3xl p-6">
+                <p className="text-xs uppercase tracking-[0.5em] text-neutral-500 mb-2">Current Venue</p>
+                <p className="font-semibold text-lg">
+                  {churchInfo.address.street}
+                </p>
+                <p className="text-neutral-500">
+                  {churchInfo.address.city}, {churchInfo.address.state} {churchInfo.address.zip}
+                </p>
+              </div>
+              {churchInfo.futureAddress && (
+                <div className="border border-neutral-200 rounded-3xl p-6">
+                  <p className="text-xs uppercase tracking-[0.5em] text-neutral-500 mb-2">Future Home</p>
+                  <p className="font-semibold text-lg">{churchInfo.futureAddress.street}</p>
+                  <p className="text-neutral-500">
+                    {churchInfo.futureAddress.city}, {churchInfo.futureAddress.state}
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* G12 Vision Section */}
       <section className="py-20 border-y border-white/5 bg-black">
