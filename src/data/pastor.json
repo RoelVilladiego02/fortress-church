@@ -1,0 +1,16 @@
+{
+  "seniorPastors": {
+    "title": "Senior Pastors Nasser and Joanna",
+      "pastors": [
+      {
+        "name": "Nasser",
+        "bio": "Passionate about discipleship and seeing lives transformed through authentic community and intentional leadership."
+      },
+      {
+        "name": "Joanna",
+        "bio": "Dedicated to creating spaces where people can encounter God's presence and grow in their relationship with Jesus."
+      }
+    ]
+  }
+}
+
