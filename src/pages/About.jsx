@@ -3,7 +3,7 @@ import pastorInfo from '../data/pastor.json';
 import pastorsImage from '../assets/pastors/pastors.jpg';
 
 export default function About() {
-  const { g12Vision, futureAddress } = churchInfo;
+  const { g12Vision } = churchInfo;
   const { seniorPastors } = pastorInfo;
 
   return (
@@ -55,23 +55,21 @@ export default function About() {
       <section className="py-16 border-b border-white/10 bg-black">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4">Future Home</p>
+            <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4">Our New Home</p>
             <h2 className="text-3xl font-bold mb-6">{churchInfo.buildingProject.name}</h2>
             <div className="border border-white/10 rounded-2xl p-8 bg-white/5">
               <p className="text-white/80 leading-relaxed mb-6">
                 {churchInfo.buildingProject.description}
               </p>
 
-              {futureAddress && (
-                <div className="mb-8 border border-white/10 rounded-2xl p-6 bg-black">
-                  <p className="text-xs uppercase tracking-[0.4em] text-white/50 mb-2">Future Address</p>
-                  <p className="text-white/80 font-semibold">
-                    {futureAddress.street}
-                    <br />
-                    {futureAddress.city}, {futureAddress.state}, {futureAddress.country}
-                  </p>
-                </div>
-              )}
+              <div className="mb-8 border border-white/10 rounded-2xl p-6 bg-black">
+                <p className="text-xs uppercase tracking-[0.4em] text-white/50 mb-2">Location</p>
+                <p className="text-white/80 font-semibold">
+                  {churchInfo.address.street}
+                  <br />
+                  {churchInfo.address.city}, {churchInfo.address.state} {churchInfo.address.zip}
+                </p>
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 <div>
@@ -85,7 +83,7 @@ export default function About() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">Estimated Completion</h4>
+                  <h4 className="font-semibold text-white mb-2">Completed</h4>
                   <p className="text-white/70">
                     {new Date(churchInfo.buildingProject.estimatedCompletion).toLocaleDateString('en-US', {
                       year: 'numeric',
@@ -95,12 +93,12 @@ export default function About() {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">Current Progress</h4>
-                  <p className="text-white/70">{churchInfo.buildingProject.currentProgress}%</p>
+                  <h4 className="font-semibold text-white mb-2">Status</h4>
+                  <p className="text-white/70">Completed - We've moved in!</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white mb-2">Goal</h4>
-                  <p className="text-white/70">{churchInfo.buildingProject.goal}%</p>
+                  <h4 className="font-semibold text-white mb-2">Progress</h4>
+                  <p className="text-white/70">{churchInfo.buildingProject.currentProgress}%</p>
                 </div>
               </div>
             </div>
@@ -123,6 +121,7 @@ export default function About() {
                   src={pastorsImage} 
                   alt="Senior Pastors James and Kate" 
                   className="w-full h-[400px] md:h-[500px] object-cover"
+                  loading="lazy"
                 />
               </div>
 

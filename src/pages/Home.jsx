@@ -45,13 +45,13 @@ export default function Home() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   to="/first-timers"
-                  className="px-6 py-3 bg-black text-white rounded-full text-xs font-semibold tracking-[0.3em] uppercase"
+                  className="px-6 py-3 bg-black text-white rounded-full text-xs font-semibold tracking-[0.3em] uppercase focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-white transition-colors"
                 >
                   I&apos;m New
                 </Link>
                 <Link
                   to="/about"
-                  className="px-6 py-3 border border-neutral-300 text-neutral-700 rounded-full text-xs font-semibold tracking-[0.3em] uppercase"
+                  className="px-6 py-3 border border-neutral-300 text-neutral-700 rounded-full text-xs font-semibold tracking-[0.3em] uppercase focus:outline-none focus:ring-2 focus:ring-neutral-300 focus:ring-offset-2 focus:ring-offset-white transition-colors"
                 >
                   Learn More
                 </Link>
@@ -61,8 +61,9 @@ export default function Home() {
               <div className="rounded-3xl overflow-hidden border border-neutral-200">
                 <img
                   src={servicePhoto}
-                  alt="Service Photo"
+                  alt="Fortress Church Sunday service gathering"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <div className="border border-neutral-200 rounded-3xl p-6">
@@ -71,7 +72,7 @@ export default function Home() {
                 <p className="text-neutral-500 mt-1">{primaryService?.name || 'Celebration Service'}</p>
               </div>
               <div className="border border-neutral-200 rounded-3xl p-6">
-                <p className="text-xs uppercase tracking-[0.5em] text-neutral-500 mb-2">Current Venue</p>
+                <p className="text-xs uppercase tracking-[0.5em] text-neutral-500 mb-2">Location</p>
                 <p className="font-semibold text-lg">
                   {churchInfo.address.street}
                 </p>
@@ -79,15 +80,6 @@ export default function Home() {
                   {churchInfo.address.city}, {churchInfo.address.state} {churchInfo.address.zip}
                 </p>
               </div>
-              {churchInfo.futureAddress && (
-                <div className="border border-neutral-200 rounded-3xl p-6">
-                  <p className="text-xs uppercase tracking-[0.5em] text-neutral-500 mb-2">Future Home</p>
-                  <p className="font-semibold text-lg">{churchInfo.futureAddress.street}</p>
-                  <p className="text-neutral-500">
-                    {churchInfo.futureAddress.city}, {churchInfo.futureAddress.state}
-                  </p>
-                </div>
-              )}
             </div>
           </div>
         </div>
@@ -143,7 +135,7 @@ export default function Home() {
             <div className="mt-10 text-center">
               <Link
                 to="/services"
-                className="inline-flex items-center justify-center border border-white/40 text-white px-10 py-3 rounded-full font-semibold tracking-[0.3em] text-xs uppercase hover:bg-white hover:text-black transition-colors"
+                className="inline-flex items-center justify-center border border-white/40 text-white px-10 py-3 rounded-full font-semibold tracking-[0.3em] text-xs uppercase hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-neutral-950 transition-colors"
               >
                 Full Schedule
               </Link>
@@ -178,7 +170,7 @@ export default function Home() {
             </div>
             <Link
               to="/ministries"
-              className="text-white/70 hover:text-white font-semibold tracking-[0.3em] text-xs uppercase"
+              className="text-white/70 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-neutral-950 rounded font-semibold tracking-[0.3em] text-xs uppercase transition-colors"
             >
               View All →
             </Link>
@@ -207,7 +199,7 @@ export default function Home() {
             </div>
             <Link
               to="/events"
-              className="text-white/70 hover:text-white font-semibold tracking-[0.3em] text-xs uppercase"
+              className="text-white/70 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black rounded font-semibold tracking-[0.3em] text-xs uppercase transition-colors"
             >
               View All →
             </Link>
@@ -239,7 +231,7 @@ export default function Home() {
             </div>
             <Link
               to="/progress"
-              className="text-white/70 hover:text-white font-semibold tracking-[0.3em] text-xs uppercase"
+              className="text-white/70 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-neutral-950 rounded font-semibold tracking-[0.3em] text-xs uppercase transition-colors"
             >
               Track Progress →
             </Link>
@@ -275,7 +267,7 @@ export default function Home() {
             </div>
             <Link
               to="/about"
-              className="inline-flex items-center justify-center border border-white/40 text-white px-10 py-3 rounded-full font-semibold tracking-[0.3em] text-xs uppercase hover:bg-white hover:text-black transition-colors"
+              className="inline-flex items-center justify-center border border-white/40 text-white px-10 py-3 rounded-full font-semibold tracking-[0.3em] text-xs uppercase hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black transition-colors"
             >
               Learn More
             </Link>

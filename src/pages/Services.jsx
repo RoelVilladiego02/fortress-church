@@ -77,7 +77,9 @@ export default function Services() {
             <h2 className="text-3xl font-bold mb-6">Where We Meet</h2>
             <div className="border border-white/10 rounded-2xl p-8 bg-black">
               <p className="text-lg text-white/80 mb-4">{servicesData.location}</p>
-              <div className="mt-6">
+              
+              {/* Address */}
+              <div>
                 <p className="text-white font-semibold mb-2">Address</p>
                 <p className="text-white/70 leading-relaxed">
                   {churchInfo.address.street}<br />
@@ -101,7 +103,7 @@ export default function Services() {
                   href={servicesData.livestream.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center border border-white/40 text-white px-10 py-3 rounded-full font-semibold tracking-[0.3em] text-xs uppercase hover:bg-white hover:text-black transition-colors"
+                  className="inline-flex items-center justify-center border border-white/40 text-white px-10 py-3 rounded-full font-semibold tracking-[0.3em] text-xs uppercase hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black transition-colors"
                 >
                   Watch Live
                 </a>

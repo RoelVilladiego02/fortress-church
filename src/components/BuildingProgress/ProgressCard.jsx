@@ -1,10 +1,12 @@
 export default function ProgressCard({ update }) {
-  const date = new Date(update.date);
-  const formattedDate = date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
+  const date = update.date ? new Date(update.date) : null;
+  const formattedDate = date && !isNaN(date.getTime())
+    ? date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })
+    : 'Date unavailable';
 
   return (
     <div className="border border-white/10 rounded-2xl overflow-hidden bg-black hover:border-white/30 transition">
@@ -55,6 +57,7 @@ export default function ProgressCard({ update }) {
                   src={`/progress-photos/${photo}`}
                   alt={`${update.title} - Photo ${index + 1}`}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                   onError={(e) => {
                     e.target.style.display = 'none';
                   }}

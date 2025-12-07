@@ -9,6 +9,9 @@ import Events from './pages/Events';
 import Progress from './pages/Progress';
 import About from './pages/About';
 import FirstTimers from './pages/FirstTimers';
+import NotFound from './pages/NotFound';
+import ErrorBoundary from './components/ErrorBoundary';
+import StructuredData from './components/StructuredData';
 
 const PageTransition = ({ children }) => (
   <motion.div
@@ -35,6 +38,7 @@ function AnimatedRoutes() {
         <Route path="/progress" element={<PageTransition><Progress /></PageTransition>} />
         <Route path="/about" element={<PageTransition><About /></PageTransition>} />
         <Route path="/first-timers" element={<PageTransition><FirstTimers /></PageTransition>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
   );
@@ -42,15 +46,18 @@ function AnimatedRoutes() {
 
 function App() {
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-grow overflow-hidden">
-          <AnimatedRoutes />
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <ErrorBoundary>
+      <StructuredData />
+      <Router>
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main id="main-content" className="flex-grow overflow-hidden">
+            <AnimatedRoutes />
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </ErrorBoundary>
   );
 }
 

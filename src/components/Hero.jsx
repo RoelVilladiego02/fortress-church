@@ -35,13 +35,13 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/services"
-              className="bg-white text-black px-10 py-3 rounded-full font-semibold tracking-[0.2em] text-xs uppercase hover:bg-neutral-200 transition-colors shadow-2xl"
+              className="bg-white text-black px-10 py-3 rounded-full font-semibold tracking-[0.2em] text-xs uppercase hover:bg-neutral-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black transition-colors shadow-2xl"
             >
               Join the Movement
             </Link>
             <Link
               to="/about"
-              className="border border-white/40 text-white px-10 py-3 rounded-full font-semibold tracking-[0.2em] text-xs uppercase hover:bg-white hover:text-black transition-colors"
+              className="border border-white/40 text-white px-10 py-3 rounded-full font-semibold tracking-[0.2em] text-xs uppercase hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black transition-colors"
             >
               Learn the Vision
             </Link>

@@ -83,8 +83,9 @@ export default function Progress() {
                 >
                   <img
                     src={image.src}
-                    alt="Fortress Church building fund"
+                    alt={`Fortress Church building fund - ${index === 0 ? 'Bank details' : index === 1 ? 'Construction work' : 'Vision'}`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
               ))}
@@ -99,21 +100,23 @@ export default function Progress() {
           <div className="flex gap-4">
             <button
               onClick={() => setViewMode('timeline')}
-              className={`px-6 py-2 rounded-full font-semibold uppercase tracking-[0.3em] text-xs ${
+              className={`px-6 py-2 rounded-full font-semibold uppercase tracking-[0.3em] text-xs focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black ${
                 viewMode === 'timeline'
                   ? 'bg-white text-black'
                   : 'border border-white/30 text-white/70 hover:text-white transition-colors'
               }`}
+              aria-pressed={viewMode === 'timeline'}
             >
               Timeline
             </button>
             <button
               onClick={() => setViewMode('gallery')}
-              className={`px-6 py-2 rounded-full font-semibold uppercase tracking-[0.3em] text-xs ${
+              className={`px-6 py-2 rounded-full font-semibold uppercase tracking-[0.3em] text-xs focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black ${
                 viewMode === 'gallery'
                   ? 'bg-white text-black'
                   : 'border border-white/30 text-white/70 hover:text-white transition-colors'
               }`}
+              aria-pressed={viewMode === 'gallery'}
             >
               Gallery
             </button>

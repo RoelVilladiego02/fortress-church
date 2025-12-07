@@ -13,4 +13,15 @@
     background-blend-mode: screen;
     min-height: 100vh;
   }
+
+  /* Improve focus visibility for keyboard navigation */
+  *:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
 }

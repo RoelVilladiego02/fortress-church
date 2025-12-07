@@ -42,6 +42,7 @@ export default function FirstTimers() {
                 src={familyPhoto}
                 alt="Fortress Church family celebrating together"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
@@ -65,32 +66,23 @@ export default function FirstTimers() {
                   <p className="text-white/60">{service?.name || 'Celebration Service'}</p>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-[0.4em] text-white/50 mb-1">Current Venue</p>
+                  <p className="text-xs uppercase tracking-[0.4em] text-white/50 mb-1">Location</p>
                   <p className="text-lg font-semibold">{churchInfo.address.street}</p>
                   <p className="text-white/60">
                     {churchInfo.address.city}, {churchInfo.address.state} {churchInfo.address.zip}
                   </p>
                 </div>
-                {churchInfo.futureAddress && (
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.4em] text-white/50 mb-1">Future Home</p>
-                    <p className="text-lg font-semibold">{churchInfo.futureAddress.street}</p>
-                    <p className="text-white/60">
-                      {churchInfo.futureAddress.city}, {churchInfo.futureAddress.state}
-                    </p>
-                  </div>
-                )}
               </div>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   to="/services"
-                  className="px-6 py-3 bg-white text-black rounded-full text-xs font-semibold tracking-[0.3em] uppercase"
+                  className="px-6 py-3 bg-white text-black rounded-full text-xs font-semibold tracking-[0.3em] uppercase focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black transition-colors"
                 >
                   Full Schedule
                 </Link>
                 <a
                   href={`mailto:${churchInfo.contact.email}`}
-                  className="px-6 py-3 border border-white/40 text-white rounded-full text-xs font-semibold tracking-[0.3em] uppercase"
+                  className="px-6 py-3 border border-white/40 text-white rounded-full text-xs font-semibold tracking-[0.3em] uppercase focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black transition-colors"
                 >
                   Ask a Question
                 </a>

@@ -11,10 +11,10 @@
     "Honor family and holiness"
   ],
   "address": {
-    "street": "Casa Nieva Events Place",
-    "city": "Biñan",
+    "street": "Sta. Rosa Town Center - SRTC National Road, Brgy. Macabling",
+    "city": "Santa Rosa",
     "state": "Laguna",
-    "zip": "4024",
+    "zip": "4026",
     "country": "Philippines"
   },
   "contact": {
@@ -51,21 +51,15 @@
   },
   "buildingProject": {
     "name": "New Sanctuary Building",
-    "description": "We are building a new sanctuary to accommodate our growing congregation and better serve our community. This project represents our commitment to faith, fellowship, and future generations.",
+    "description": "We have moved into our new sanctuary! This new space accommodates our growing congregation and better serves our community. This project represents our commitment to faith, fellowship, and future generations.",
     "startDate": "2025-11-10",
     "estimatedCompletion": "2025-12-10",
-    "currentProgress": 25,
+    "currentProgress": 100,
     "goal": 100
   },
   "social": {
     "facebook": "https://www.facebook.com/profile.php?id=61576246697187",
     "instagram": "https://www.instagram.com/fortress.church?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-  },
-  "futureAddress": {
-    "street": "Sta. Rosa Town Center - SRTC National Road, Brgy. Macabling",
-    "city": "Santa Rosa",
-    "state": "Laguna",
-    "country": "Philippines"
   }
 }
 
