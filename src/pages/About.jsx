@@ -111,7 +111,7 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4 text-center">Leadership</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Meet our Senior Pastors</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">Meet our Head Pastors</h2>
             
             {/* Image first, then content below */}
             <div className="space-y-8">
