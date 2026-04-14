@@ -1,7 +1,6 @@
 import Hero from '../components/Hero';
-import ProgressTimeline from '../components/BuildingProgress/ProgressTimeline';
+import ImageGrid from '../components/ImageGrid';
 import churchInfo from '../data/church-info.json';
-import progressUpdates from '../data/progress-updates.json';
 import servicesData from '../data/services.json';
 import ministriesData from '../data/ministries.json';
 import eventsData from '../data/events.json';
@@ -9,11 +8,6 @@ import { Link } from 'react-router-dom';
 import servicePhoto from '../assets/service.png';
 
 export default function Home() {
-  // Get latest 2 updates
-  const latestUpdates = [...progressUpdates.updates]
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 2);
-
   // Get next 3 events
   const upcomingEvents = [...eventsData.upcomingEvents]
     .filter(event => new Date(event.date) >= new Date())
@@ -37,10 +31,9 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-xs uppercase tracking-[0.6em] text-neutral-500 mb-4">Welcome Home</p>
-              <h2 className="text-4xl md:text-5xl font-black leading-tight mb-6">This is Home—for families, leaders, and generations.</h2>
-              <p className="text-lg text-neutral-600 leading-relaxed">
-                Whether you are fresh out of an Encounter or stepping into your first cell, Fortress Church is a safe place to heal, belong,
-                and be sent. Pull up a chair—there&apos;s room for you at the table.
+              <h2 className="text-4xl md:text-5xl font-black leading-tight mb-4">A Safe Place to Belong.</h2>
+              <p className="text-lg text-neutral-600 leading-relaxed mb-8">
+                Heal, grow, and be sent. There&apos;s room for you here.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
@@ -58,7 +51,7 @@ export default function Home() {
               </div>
             </div>
             <div className="grid gap-4">
-              <div className="rounded-3xl overflow-hidden border border-neutral-200">
+              <div className="rounded-3xl overflow-hidden border border-neutral-200 h-80">
                 <img
                   src={servicePhoto}
                   alt="Fortress Church Sunday service gathering"
@@ -66,19 +59,15 @@ export default function Home() {
                   loading="lazy"
                 />
               </div>
-              <div className="border border-neutral-200 rounded-3xl p-6">
-                <p className="text-xs uppercase tracking-[0.5em] text-neutral-500 mb-2">Sunday Service</p>
-                <p className="text-3xl font-black">{primaryService?.time || '3:00 PM – 7:00 PM'}</p>
-                <p className="text-neutral-500 mt-1">{primaryService?.name || 'Celebration Service'}</p>
-              </div>
-              <div className="border border-neutral-200 rounded-3xl p-6">
-                <p className="text-xs uppercase tracking-[0.5em] text-neutral-500 mb-2">Location</p>
-                <p className="font-semibold text-lg">
-                  {churchInfo.address.street}
-                </p>
-                <p className="text-neutral-500">
-                  {churchInfo.address.city}, {churchInfo.address.state} {churchInfo.address.zip}
-                </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="border border-neutral-200 rounded-2xl p-4">
+                  <p className="text-xs uppercase tracking-[0.5em] text-neutral-500 mb-1">Time</p>
+                  <p className="text-xl font-black">{primaryService?.time || '3 PM'}</p>
+                </div>
+                <div className="border border-neutral-200 rounded-2xl p-4">
+                  <p className="text-xs uppercase tracking-[0.5em] text-neutral-500 mb-1">Where</p>
+                  <p className="text-xs font-semibold">{churchInfo.address.city}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -160,7 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ministries Section */}
+      {/* Ministries Section with Images */}
       <section className="py-16 bg-neutral-950 border-b border-white/5">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10 gap-6">
@@ -175,14 +164,24 @@ export default function Home() {
               View All →
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Image Gallery Grid */}
+          <div className="mb-8">
+            <ImageGrid 
+              images={[
+                { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', alt: 'Cell group worship', overlay: 'Cell Groups' },
+                { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', alt: 'Youth ministry', overlay: 'Youth Leaders' },
+                { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', alt: 'Community outreach', overlay: 'Outreach Teams' }
+              ]}
+              columns={3}
+              gap={4}
+            />
+          </div>
+          {/* Ministry Cards (condensed) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {featuredMinistries.map((ministry, index) => (
-              <div key={index} className="border border-white/10 rounded-2xl p-6 bg-black">
-                <h3 className="text-2xl font-semibold mb-3">{ministry.name}</h3>
-                <p className="text-white/70 mb-4 leading-relaxed">{ministry.description}</p>
-                <p className="text-sm text-white/50">
-                  <span className="font-semibold text-white/70">Meets:</span> {ministry.meets}
-                </p>
+              <div key={index} className="border border-white/10 rounded-xl p-4 bg-black/50">
+                <h3 className="font-bold mb-2">{ministry.name}</h3>
+                <p className="text-white/60 text-sm line-clamp-2">{ministry.description}</p>
               </div>
             ))}
           </div>
@@ -218,37 +217,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Building Progress Section */}
-      <section className="py-16 bg-neutral-950 border-b border-white/5">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10 gap-6">
-            <div>
-              <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-3">Future Home</p>
-              <h2 className="text-4xl font-bold">New Sanctuary Project</h2>
-            </div>
-            <Link
-              to="/progress"
-              className="text-white/70 hover:text-white focus:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-neutral-950 rounded font-semibold tracking-[0.3em] text-xs uppercase transition-colors"
-            >
-              Track Progress →
-            </Link>
-          </div>
-          <div className="mb-8 border border-white/10 rounded-2xl p-6 bg-black">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
-              <span className="text-lg font-semibold text-white/80">Overall Progress</span>
-              <span className="text-3xl font-black">{churchInfo.buildingProject.currentProgress}%</span>
-            </div>
-            <div className="w-full bg-white/10 rounded-full h-3 overflow-hidden">
-              <div
-                className="bg-white h-3 rounded-full transition-all duration-500"
-                style={{ width: `${churchInfo.buildingProject.currentProgress}%` }}
-              />
-            </div>
-          </div>
-          <ProgressTimeline updates={latestUpdates} />
         </div>
       </section>
 

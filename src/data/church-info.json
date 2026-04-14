@@ -1,7 +1,7 @@
 {
   "name": "Fortress Church",
   "tagline": "One Vision • Twelve Leaders • Generations Reached",
-  "welcomeMessage": "Fortress Church is a G12 house committed to winning souls, consolidating families, discipling leaders, and sending every believer to impact the nations. No matter where you are on your journey, there is a place for you in the Government of Twelve.",
+  "welcomeMessage": "Fortress Church is a G12 house committed to winning souls, consolidating families, discipling leaders, and sending every believer to impact their communities. No matter where you are on your journey, there is a place for you in the Government of Twelve.",
   "mission": "To raise multiplying disciples through the G12 Vision—encountering Jesus, consolidating new believers, discipling with intention, and sending out teams that transform cities.",
   "values": [
     "Encounter Jesus personally",
@@ -48,14 +48,6 @@
       "leadersInTraining": 15
     },
     "scripture": "Matthew 28:19-20"
-  },
-  "buildingProject": {
-    "name": "New Sanctuary Building",
-    "description": "We have moved into our new sanctuary! This new space accommodates our growing congregation and better serves our community. This project represents our commitment to faith, fellowship, and future generations.",
-    "startDate": "2025-11-10",
-    "estimatedCompletion": "2025-12-10",
-    "currentProgress": 100,
-    "goal": 100
   },
   "social": {
     "facebook": "https://www.facebook.com/profile.php?id=61576246697187",

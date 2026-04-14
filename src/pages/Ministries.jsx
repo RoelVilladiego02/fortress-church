@@ -1,4 +1,5 @@
 import ministriesData from '../data/ministries.json';
+import ImageGrid from '../components/ImageGrid';
 
 export default function Ministries() {
   const streams = ministriesData.g12Streams || [];
@@ -16,20 +17,34 @@ export default function Ministries() {
         </div>
       </section>
 
-      {/* G12 Streams */}
+      {/* G12 Streams with Images */}
       {streams.length > 0 && (
         <section className="py-16 border-b border-white/10 bg-black">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4 text-center">Discipleship Flow</p>
               <h2 className="text-4xl font-bold text-center mb-10">G12 Streams</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+              {/* Image Gallery */}
+              <div className="mb-10">
+                <ImageGrid 
+                  images={[
+                    { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop', alt: 'Encounter retreat', overlay: 'Encounter' },
+                    { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', alt: 'Consolidation groups', overlay: 'Consolidate' },
+                    { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', alt: 'School of Leaders', overlay: 'Disciple' }
+                  ]}
+                  columns={3}
+                  gap={4}
+                />
+              </div>
+
+              {/* Stream Details (condensed) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {streams.map((stream) => (
-                  <div key={stream.title} className="border border-white/10 rounded-2xl p-6 bg-white/5">
-                    <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-2">{stream.rhythm}</p>
-                    <h3 className="text-2xl font-semibold mb-3">{stream.title}</h3>
-                    <p className="text-white/70 mb-3">{stream.focus}</p>
-                    <p className="text-sm text-white/60">{stream.nextStep}</p>
+                  <div key={stream.title} className="border border-white/10 rounded-xl p-4 bg-white/5">
+                    <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-1">{stream.rhythm}</p>
+                    <h3 className="font-semibold mb-2">{stream.title}</h3>
+                    <p className="text-white/60 text-xs line-clamp-2">{stream.focus}</p>
                   </div>
                 ))}
               </div>
@@ -38,27 +53,38 @@ export default function Ministries() {
         </section>
       )}
 
-      {/* Ministries Grid */}
+      {/* Ministries Grid with Images */}
       <section className="py-16 border-b border-white/10">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ministriesData.ministries.map((ministry, index) => (
-              <div key={index} className="border border-white/10 rounded-2xl p-6 bg-black hover:border-white/30 transition">
-                <h3 className="text-2xl font-semibold mb-3">{ministry.name}</h3>
-                <p className="text-white/70 mb-4 leading-relaxed">{ministry.description}</p>
-                <div className="space-y-2 text-sm text-white/60">
-                  {/* <p>
-                    <span className="font-semibold text-white/80">Meets:</span> {ministry.meets}
-                  </p>
-                  <p>
-                    <span className="font-semibold text-white/80">Contact:</span>{' '}
-                    <a href={`mailto:${ministry.contact}`} className="text-white hover:text-white/70 transition-colors">
-                      {ministry.contact}
-                    </a>
-                  </p> */}
+          <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4 text-center">Ministry Teams</p>
+          <h2 className="text-3xl font-bold text-center mb-10">Our Ministries</h2>
+          
+          {/* Image Gallery */}
+          <div className="mb-10 max-w-5xl mx-auto">
+            <ImageGrid 
+              images={[
+                { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', alt: 'Worship ministry', overlay: 'Worship' },
+                { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', alt: 'Youth ministry', overlay: 'Youth' },
+                { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', alt: 'Outreach', overlay: 'Outreach' },
+                { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', alt: 'Children ministry', overlay: 'Kids' },
+                { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', alt: 'Admin team', overlay: 'Support' },
+                { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', alt: 'Tech ministry', overlay: 'Tech' }
+              ]}
+              columns={3}
+              gap={4}
+            />
+          </div>
+
+          {/* Ministry Cards (condensed with 3 columns) */}
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {ministriesData.ministries.map((ministry, index) => (
+                <div key={index} className="border border-white/10 rounded-xl p-4 bg-black/50 hover:border-white/30 transition">
+                  <h3 className="font-bold mb-2 line-clamp-1">{ministry.name}</h3>
+                  <p className="text-white/70 text-xs line-clamp-2">{ministry.description}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 import churchInfo from '../data/church-info.json';
 import pastorInfo from '../data/pastor.json';
+import ImageGrid from '../components/ImageGrid';
 import pastorsImage from '../assets/pastors/pastors.jpg';
 
 export default function About() {
@@ -17,91 +18,57 @@ export default function About() {
         </div>
       </section>
 
-      {/* Mission + G12 */}
+      {/* Mission + G12 Visual */}
       <section className="py-16 border-b border-white/10 bg-black">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="border border-white/10 rounded-2xl p-6 bg-white/5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+            <div className="flex flex-col justify-center">
               <p className="text-xs uppercase tracking-[0.4em] text-white/50 mb-3">Mission</p>
               <h2 className="text-3xl font-bold mb-4">Why We Exist</h2>
-              <p className="text-white/80 leading-relaxed">{churchInfo.mission}</p>
+              <p className="text-white/80 leading-relaxed line-clamp-3">{churchInfo.mission}</p>
             </div>
-            <div className="border border-white/10 rounded-2xl p-6 bg-white/5">
+            <div className="flex flex-col justify-center">
               <p className="text-xs uppercase tracking-[0.4em] text-white/50 mb-3">G12 Vision</p>
               <h2 className="text-3xl font-bold mb-4">{g12Vision.theme}</h2>
-              <p className="text-white/80 leading-relaxed">{g12Vision.description}</p>
+              <p className="text-white/80 leading-relaxed line-clamp-3">{g12Vision.description}</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* G12 Pillars */}
-      <section className="py-16 border-b border-white/10">
-        <div className="container mx-auto px-4">
-          <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4 text-center">Blueprint</p>
-          <h2 className="text-3xl font-bold text-center mb-10">G12 Pillars</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {g12Vision.pillars.map((pillar) => (
-              <div key={pillar.title} className="border border-white/10 rounded-2xl p-6 bg-black">
-                <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-2">{pillar.title}</p>
-                <p className="text-white/75">{pillar.summary}</p>
+          {/* Visual Theme Cards */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {['Win', 'Consolidate', 'Disciple', 'Send'].map((word) => (
+              <div key={word} className="border border-white/20 rounded-xl p-4 text-center bg-white/5">
+                <p className="font-bold text-xl">{word}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Building Project Section */}
-      <section className="py-16 border-b border-white/10 bg-black">
+      {/* G12 Pillars with Images */}
+      <section className="py-16 border-b border-white/10">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4">Our New Home</p>
-            <h2 className="text-3xl font-bold mb-6">{churchInfo.buildingProject.name}</h2>
-            <div className="border border-white/10 rounded-2xl p-8 bg-white/5">
-              <p className="text-white/80 leading-relaxed mb-6">
-                {churchInfo.buildingProject.description}
-              </p>
-
-              <div className="mb-8 border border-white/10 rounded-2xl p-6 bg-black">
-                <p className="text-xs uppercase tracking-[0.4em] text-white/50 mb-2">Location</p>
-                <p className="text-white/80 font-semibold">
-                  {churchInfo.address.street}
-                  <br />
-                  {churchInfo.address.city}, {churchInfo.address.state} {churchInfo.address.zip}
-                </p>
+          <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4 text-center">Blueprint</p>
+          <h2 className="text-3xl font-bold text-center mb-10">G12 Pillars</h2>
+          {/* Image Gallery for Pillars */}
+          <div className="mb-10">
+            <ImageGrid 
+              images={[
+                { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop', alt: 'Encounter Retreats', overlay: 'Encounter' },
+                { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', alt: 'Consolidation', overlay: 'Consolidate' },
+                { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', alt: 'School of Leaders', overlay: 'Disciple' }
+              ]}
+              columns={3}
+              gap={4}
+            />
+          </div>
+          {/* Pillar Details (condensed) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+            {g12Vision.pillars.map((pillar) => (
+              <div key={pillar.title} className="border border-white/10 rounded-xl p-4 bg-black/50">
+                <p className="font-semibold text-white mb-1">{pillar.title}</p>
+                <p className="text-white/60 text-sm line-clamp-2">{pillar.summary}</p>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <div>
-                  <h4 className="font-semibold text-white mb-2">Project Start</h4>
-                  <p className="text-white/70">
-                    {new Date(churchInfo.buildingProject.startDate).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-2">Completed</h4>
-                  <p className="text-white/70">
-                    {new Date(churchInfo.buildingProject.estimatedCompletion).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-2">Status</h4>
-                  <p className="text-white/70">Completed - We've moved in!</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-2">Progress</h4>
-                  <p className="text-white/70">{churchInfo.buildingProject.currentProgress}%</p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -173,7 +140,7 @@ export default function About() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-white mb-2">Pastor</h3>
+                  <h3 className="font-semibold text-white mb-2">Head Pastor</h3>
                   <p>{churchInfo.contact.pastor}</p>
                 </div>
               </div>

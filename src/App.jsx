@@ -6,7 +6,6 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import Ministries from './pages/Ministries';
 import Events from './pages/Events';
-import Progress from './pages/Progress';
 import About from './pages/About';
 import FirstTimers from './pages/FirstTimers';
 import NotFound from './pages/NotFound';
@@ -35,7 +34,6 @@ function AnimatedRoutes() {
         <Route path="/services" element={<PageTransition><Services /></PageTransition>} />
         <Route path="/ministries" element={<PageTransition><Ministries /></PageTransition>} />
         <Route path="/events" element={<PageTransition><Events /></PageTransition>} />
-        <Route path="/progress" element={<PageTransition><Progress /></PageTransition>} />
         <Route path="/about" element={<PageTransition><About /></PageTransition>} />
         <Route path="/first-timers" element={<PageTransition><FirstTimers /></PageTransition>} />
         <Route path="*" element={<NotFound />} />

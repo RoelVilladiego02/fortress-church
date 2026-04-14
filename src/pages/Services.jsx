@@ -1,5 +1,6 @@
 import churchInfo from '../data/church-info.json';
 import servicesData from '../data/services.json';
+import ImageGrid from '../components/ImageGrid';
 
 export default function Services() {
   const g12Rhythms = servicesData.g12Rhythms || [];
@@ -17,28 +18,20 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Service Times */}
+      {/* Service Times - Simplified */}
       <section className="py-16 border-b border-white/10">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-10">Celebration Services</h2>
-            <div className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {servicesData.serviceTimes.map((day, dayIndex) => (
                 <div key={dayIndex} className="border border-white/10 rounded-2xl p-6 bg-black">
-                  <h3 className="text-2xl font-semibold mb-6">{day.day}</h3>
-                  <div className="space-y-6">
+                  <h3 className="text-xl font-semibold mb-4">{day.day}</h3>
+                  <div className="space-y-3">
                     {day.services.map((service, serviceIndex) => (
-                      <div key={serviceIndex} className="pt-6 border-t border-white/10 first:border-t-0 first:pt-0">
-                        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                          <div className="flex-1">
-                            <h4 className="text-xl font-semibold mb-2">{service.name}</h4>
-                            <p className="text-white/70 leading-relaxed">{service.description}</p>
-                          </div>
-                          <div className="text-left md:text-right">
-                            <div className="text-2xl font-black mb-1">{service.time}</div>
-                            <div className="text-white/50 text-sm">{day.day}</div>
-                          </div>
-                        </div>
+                      <div key={serviceIndex} className="pb-3 border-b border-white/10 last:border-0 last:pb-0">
+                        <h4 className="font-semibold text-white/90 mb-1">{service.name}</h4>
+                        <p className="text-sm text-white/60">{service.time}</p>
                       </div>
                     ))}
                   </div>
@@ -49,19 +42,34 @@ export default function Services() {
         </div>
       </section>
 
-      {/* G12 Rhythms */}
+      {/* G12 Rhythms with Images */}
       {g12Rhythms.length > 0 && (
         <section className="py-16 border-b border-white/10 bg-black">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
               <p className="text-xs uppercase tracking-[0.5em] text-white/50 mb-4 text-center">Beyond Sunday</p>
               <h2 className="text-4xl font-bold text-center mb-10">G12 Rhythms</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              
+              {/* Image Gallery */}
+              <div className="mb-10">
+                <ImageGrid 
+                  images={[
+                    { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', alt: 'Cell group', overlay: 'Cells' },
+                    { src: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop', alt: 'Leaders retreat', overlay: 'Leaders' },
+                    { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop', alt: 'Encounter', overlay: 'Growth' }
+                  ]}
+                  columns={3}
+                  gap={4}
+                />
+              </div>
+
+              {/* Rhythm Details (condensed) */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {g12Rhythms.map((rhythm) => (
-                  <div key={rhythm.title} className="border border-white/10 rounded-2xl p-6 bg-white/5">
-                    <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-2">{rhythm.day} • {rhythm.time}</p>
-                    <h3 className="text-xl font-semibold mb-3">{rhythm.title}</h3>
-                    <p className="text-white/70 text-sm leading-relaxed">{rhythm.description}</p>
+                  <div key={rhythm.title} className="border border-white/10 rounded-xl p-4 bg-white/5">
+                    <p className="text-xs uppercase tracking-[0.3em] text-white/50 mb-2">{rhythm.day}</p>
+                    <h3 className="font-semibold mb-1">{rhythm.title}</h3>
+                    <p className="text-white/60 text-xs line-clamp-2">{rhythm.description}</p>
                   </div>
                 ))}
               </div>
@@ -70,21 +78,36 @@ export default function Services() {
         </section>
       )}
 
-      {/* Location */}
+      {/* Location - Visual Focus */}
       <section className="py-16 border-b border-white/10">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Where We Meet</h2>
-            <div className="border border-white/10 rounded-2xl p-8 bg-black">
-              <p className="text-lg text-white/80 mb-4">{servicesData.location}</p>
-              
-              {/* Address */}
+          <h2 className="text-3xl font-bold mb-10 text-center">Find Us</h2>
+          <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            {/* Location Map/Image */}
+            <div className="rounded-3xl overflow-hidden border border-white/10 h-64 md:h-80">
+              <img 
+                src="https://images.unsplash.com/photo-1488747807830-63789f68bb65?w=600&h=400&fit=crop"
+                alt="Location map"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            {/* Details */}
+            <div className="space-y-4">
               <div>
-                <p className="text-white font-semibold mb-2">Address</p>
-                <p className="text-white/70 leading-relaxed">
+                <p className="text-xs uppercase tracking-[0.4em] text-white/50 mb-2">Address</p>
+                <p className="text-white/80 font-semibold">
                   {churchInfo.address.street}<br />
                   {churchInfo.address.city}, {churchInfo.address.state} {churchInfo.address.zip}
                 </p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.4em] text-white/50 mb-2">Parking</p>
+                <p className="text-white/70">Free parking on-site</p>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.4em] text-white/50 mb-2">Access</p>
+                <p className="text-white/70">Accessible facilities • Nursery available</p>
               </div>
             </div>
           </div>

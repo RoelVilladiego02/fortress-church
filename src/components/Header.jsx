@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useState, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 import logoMark from '../assets/logo/fortress.png';
 
 export default function Header() {
@@ -7,7 +7,7 @@ export default function Header() {
   const location = useLocation();
 
   // Close mobile menu when route changes
-  useLayoutEffect(() => {
+  useEffect(() => {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
@@ -50,9 +50,6 @@ export default function Header() {
             <Link to="/events" className={linkClasses}>
               Events
             </Link>
-            <Link to="/progress" className={linkClasses}>
-              Progress
-            </Link>
             <Link to="/about" className={linkClasses}>
               About
             </Link>
@@ -84,7 +81,6 @@ export default function Header() {
               { path: '/services', label: 'Services' },
               { path: '/ministries', label: 'Ministries' },
               { path: '/events', label: 'Events' },
-              { path: '/progress', label: 'Progress' },
               { path: '/about', label: 'About' },
               { path: '/first-timers', label: 'First Timers' }
             ].map((item) => (
