@@ -86,7 +86,7 @@ export default function About() {
               <div className="border border-white/10 rounded-3xl overflow-hidden bg-white/5 shadow-2xl">
                 <img 
                   src={pastorsImage} 
-                  alt="Senior Pastors James and Kate" 
+                  alt="Pastors Nasser and Joanna" 
                   className="w-full h-[400px] md:h-[500px] object-cover"
                   loading="lazy"
                 />
